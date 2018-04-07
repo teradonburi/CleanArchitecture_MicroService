@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "license": "ISC",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "run-p dev:*",
     "dev:client": "cd client;yarn dev",

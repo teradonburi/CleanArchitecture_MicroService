@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'dev') {
   // distフォルダをホスティング
   app.use(express.static('dist'))
   // distのtemplate.htmlのbundle.jsパスを取得
-  JSDOM.fromFile(__dirname + '/../dist/template.html').then(dom => {
+  JSDOM.fromFile(__dirname + '/dist/template.html').then(dom => {
     const document = dom.window.document
     const scripts = document.querySelectorAll('script[type="text/javascript"]')
     for (let i = 0; i < scripts.length; i++) {
