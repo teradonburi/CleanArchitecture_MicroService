@@ -49,7 +49,7 @@ export default () => {
         const { open, user } = this.state
 
         // propsにinject属性追加
-        return  <WrappedComponent
+        return <WrappedComponent
           {...this.props}
           users={users}
           open={open}

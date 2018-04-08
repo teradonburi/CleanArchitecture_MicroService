@@ -58,7 +58,7 @@ export default () => {
         const { handleSubmit, submitting } = this.props
 
         // propsにinject属性追加
-        return  <WrappedComponent
+        return <WrappedComponent
           {...this.props}
           handlePageMove={this.handlePageMove}
           handleSubmit={handleSubmit}
