@@ -18,8 +18,8 @@ import reducer from 'reducer/reducer'
 import theme from 'common/theme'
 
 // クライアントサイドと同じComponentを使う
-import UserPage from 'components/UserPage'
-import TodoPage from 'components/TodoPage'
+import UserPage from 'components/pages/UserPage'
+import TodoPage from 'components/pages/TodoPage'
 
 
 export default function ssr(req, res, initialData) {
