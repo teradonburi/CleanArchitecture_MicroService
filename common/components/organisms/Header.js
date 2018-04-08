@@ -15,7 +15,7 @@ const Header = ({ classes, content, contentMobile, buttonTitle, onClickPageMove 
               {contentMobile}
             </Hidden>,
           ]
-          : {content}
+          : <div>{content}</div>
       }
       <Button style={{color: '#fff', position: 'absolute', top: 15, right: 0}} onClick={onClickPageMove}>{buttonTitle}</Button>
     </Toolbar>
