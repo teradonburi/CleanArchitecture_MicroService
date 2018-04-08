@@ -7,13 +7,14 @@ import Diag from 'components/organisms/Diag'
 const UserPageTemplate = ({
   headerContent, headerContentMobile, headerButtonTitle,
   users, onClickEmail,
-  open, onCloseDialog, dialogTitle, email,
+  open, onCloseDialog, dialogTitle, email, onClickPageMove,
 }) => (
   <div>
     <Header
       content={headerContent}
       contentMobile={headerContentMobile}
       buttonTitle={headerButtonTitle}
+      onClickPageMove={onClickPageMove}
     />
     <UserList
       users={users}
