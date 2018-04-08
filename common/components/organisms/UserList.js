@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { withTheme } from 'material-ui/styles'
-import { Avatar, Card, CardContent } from 'material-ui'
+import { Avatar, CardContent } from 'material-ui'
 import EmailButton from 'components/modules/EmailButton'
+import StyledCard from 'components/atoms/StyledCard'
 
 const UserList = ({theme, users, onClick}) => {
   const {primary, secondary} = theme.palette
@@ -11,20 +12,20 @@ const UserList = ({theme, users, onClick}) => {
 
   const Name = styled.p`
     && {
-      margin: 10;
+      margin: 10px;
       color: ${primary[500]}
     }`
 
   const Gender = styled.p`
     && {
-      margin: 10;
+      margin: 10px;
       color: ${secondary[500]}
     }`
 
   return users.map((user) => (
     // ループで展開する要素には一意なkeyをつける（ReactJSの決まり事）
-    <Card key={user.email} style={{marginTop: '10px'}}>
-      <CardContent style={{color: '#408040'}}>
+    <StyledCard key={user.email}>
+      <CardContent>
         <Avatar src={user.picture.thumbnail} />
         <Name>{'名前:' + user.name.first + ' ' + user.name.last}</Name>
         <Gender>{'性別:' + (user.gender == 'male' ? '男性' : '女性')}</Gender>
@@ -32,7 +33,7 @@ const UserList = ({theme, users, onClick}) => {
           <EmailButton onClick={() => onClick(user)} />
         </div>
       </CardContent>
-    </Card>
+    </StyledCard>
   ))
 }
 

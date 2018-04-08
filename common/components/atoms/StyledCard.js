@@ -3,7 +3,7 @@ import { Card } from 'material-ui'
 
 const StyledCard = styled(Card)`
   && {
-    padding: 10;
+    margin-top: 10px;
   }
 `
 
