@@ -47,8 +47,8 @@ app.get('/todo', (req, res) => {
 })
 
 
-app.listen(8000, function () {
-  console.log('app listening on port 8000')
+app.listen(6000, function () {
+  console.log('app listening on port 6000')
 })
 
 // 例外ハンドリング
