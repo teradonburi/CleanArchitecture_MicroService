@@ -26,7 +26,7 @@ module.exports = {
     historyApiFallback: true, // history APIが404エラーを返す場合にtemplate.htmlに飛ばす
     inline: true, // ソース変更時リロードモード
     hot: true, // HMR(Hot Module Reload)モード
-    port: 8080, // 起動ポート,
+    port: 7070, // 起動ポート,
     publicPath: '/',
     proxy: {
       '**': {

@@ -7,7 +7,7 @@ const ssr = require('./ssr.build').default
 let bundles = []
 if (process.env.NODE_ENV === 'dev') {
   // webpack-dev-serverのbundle.jsにredirect
-  app.get('/bundle.js', (req, res) => res.redirect('http://localhost:8080/bundle.js'))
+  app.get('/bundle.js', (req, res) => res.redirect('http://localhost:7070/bundle.js'))
 } else if (process.env.NODE_ENV === 'production') {
   const jsdom = require('jsdom')
   const { JSDOM } = jsdom
