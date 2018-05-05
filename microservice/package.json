@@ -1,0 +1,14 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=dev node-dev --inspect grpc_server.js",
+    "prod": "NODE_ENV=production node grpc_server.js"
+  },
+  "dependencies": {
+    "grpc": "^1.11.3",
+    "lowdb": "^1.0.0"
+  }
+}

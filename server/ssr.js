@@ -68,7 +68,7 @@ const HTML = (props) => {
       <head>
         {/* ここでmetaタグの切り替えやAMP用のhtml出力の切り替えを行う、今回は具体例は省略 */}
         <meta charSet="utf-8" />
-        <title>learnReactJS</title>
+        <title>CleanArchitecture MicroService</title>
         <style>{props.style}</style>
       </head>
       <body>

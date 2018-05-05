@@ -32,7 +32,7 @@ export function load() {
   // ユーザ一覧を取得
   return (dispatch, getState, client) => {
     return client
-      .get('https://randomuser.me/api')
+      .get('http://localhost:7070/users')
       .then(res => res.data)
       .then(data => {
         const results = data.results
@@ -44,12 +44,16 @@ export function load() {
 
 export function add(user) {
   // 入力ユーザを追加
-  return (dispatch) => {
-    // 疑似ユーザ作成（本来はサーバ送信＆DB保存）
-    const data = {'results': [{'gender': user.gender, 'name': {'first': user.firstname, 'last': user.lastname}, 'email': user.email, 'picture': {'thumbnail': 'https://avatars1.githubusercontent.com/u/771218?s=460&v=4'}}]}
-    const results = data.results[0]
-    // dispatchしてreducer呼び出し
-    dispatch({ type: ADD, results })
-    return Promise.resolve()
+  return (dispatch, getState, client) => {
+    // 疑似ユーザ作成（サーバ送信＆DB保存）
+    const data = {'gender': user.gender, 'name': {'first': user.firstname, 'last': user.lastname}, 'email': user.email, 'picture': {'thumbnail': 'https://avatars1.githubusercontent.com/u/771218?s=460&v=4'}}
+    return client
+      .post('http://localhost:7070/users', data)
+      .then(res => res.data)
+      .then(data => {
+        const results = data.results
+        // dispatchしてreducer呼び出し
+        dispatch({ type: ADD, results })
+      })
   }
 }

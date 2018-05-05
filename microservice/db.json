@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "934441926",
+      "age": 30,
+      "gender": "female",
+      "name": {
+        "title": "ms",
+        "first": "georgia",
+        "last": "gregory"
+      },
+      "email": "georgia.gregory@example.com",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/39.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
+      },
+      "isPublic": true
+    },
+    {
+      "id": "",
+      "gender": "male",
+      "age": 0,
+      "name": {
+        "title": "",
+        "first": "てすと",
+        "last": "です"
+      },
+      "email": "p@p.cp",
+      "picture": {
+        "large": "",
+        "medium": "",
+        "thumbnail": "https://avatars1.githubusercontent.com/u/771218?s=460&v=4"
+      },
+      "isPublic": false
+    },
+    {
+      "id": "",
+      "gender": "male",
+      "age": 0,
+      "name": {
+        "title": "",
+        "first": "a",
+        "last": "b"
+      },
+      "email": "a@s.co",
+      "picture": {
+        "large": "",
+        "medium": "",
+        "thumbnail": "https://avatars1.githubusercontent.com/u/771218?s=460&v=4"
+      },
+      "isPublic": false
+    }
+  ]
+}

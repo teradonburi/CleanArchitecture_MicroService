@@ -11,6 +11,7 @@
     "dev": "run-p dev:*",
     "dev:client": "cd client;yarn dev",
     "dev:server": "cd server;yarn dev",
+    "dev:microservice": "cd microservice;yarn dev",
     "lint": "eslint .",
     "rm": "rm -rf dist/*",
     "build-webpack": "NODE_ENV=production webpack -p --config webpack.build.js",

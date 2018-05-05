@@ -30,7 +30,7 @@ module.exports = {
     publicPath: '/',
     proxy: {
       '**': {
-        target: 'http://0.0.0.0:6000',
+        target: 'http://0.0.0.0:7000',
         secure: false,
         logLevel: 'debug',
       },

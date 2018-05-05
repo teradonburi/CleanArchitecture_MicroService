@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:server-build": "webpack --config webpack.server.js --watch",
-    "dev:server": "NODE_ENV=dev node-dev --inspect server/server.js",
+    "dev:server": "NODE_ENV=dev node-dev --inspect=127.0.0.1:9230 server/server.js",
     "prod": "NODE_ENV=production node server.js"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
+    "grpc": "^1.11.3",
     "jsdom": "^11.6.2"
   }
 }

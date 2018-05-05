@@ -1,5 +1,14 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
+const grpc_client = require('./grpc_client')
+
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
+// 例外ハンドリング
+process.on('uncaughtException', (err) => console.log('uncaughtException => ' + err))
+process.on('unhandledRejection', (err) => console.log('unhandledRejection => ' + err))
 
 // webpackでbuild済みのSSRモジュールを読み込む
 const ssr = require('./ssr.build').default
@@ -31,6 +40,7 @@ if (process.env.NODE_ENV === 'dev') {
   })
 }
 
+// UserPage
 app.get('/', (req, res) => {
   // redux storeに代入する初期パラメータ、各ページの初期ステートと同じ構造にする
   const initialData = {
@@ -41,16 +51,26 @@ app.get('/', (req, res) => {
   ssr(req, res, initialData)
 })
 
+// TodoPage
 app.get('/todo', (req, res) => {
   const initialData = {}
   ssr(req, res, initialData)
 })
 
-
-app.listen(6000, function () {
-  console.log('app listening on port 6000')
+// ユーザ取得
+app.get('/users', async (req, res) => {
+  const users = await grpc_client.index()
+  res.json({results: users})
 })
 
-// 例外ハンドリング
-process.on('uncaughtException', (err) => console.log('uncaughtException => ' + err))
-process.on('unhandledRejection', (err) => console.log('unhandledRejection => ' + err))
+// ユーザ作成
+app.post('/users', async (req, res) => {
+  console.log(req.body)
+  const user = await grpc_client.create(req.body)
+  res.json({results: user})
+})
+
+
+app.listen(7000, function () {
+  console.log('app listening on port 7000')
+})
