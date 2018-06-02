@@ -37,6 +37,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "grpc": "^1.11.3",
-    "jsdom": "^11.6.2"
+    "jsdom": "^11.6.2",
+    "lowdb": "^1.0.0"
   }
 }
